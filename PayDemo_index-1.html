@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayDemo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f5f5f5; color: #222; }
+    .app { max-width: 480px; min-height: 100vh; margin: auto; background: white; }
+    header { background: #6739b7; color: white; padding: 22px 18px; border-radius: 0 0 25px 25px; }
+    .top { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 25px; font-weight: bold; }
+    .profile { width: 42px; height: 42px; border-radius: 50%; background: white; color: #6739b7;
+      display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .balance-box { margin-top: 25px; background: rgba(255,255,255,.15); padding: 18px; border-radius: 18px; }
+    .balance-title { font-size: 14px; opacity: .9; }
+    .balance { font-size: 32px; font-weight: bold; margin-top: 6px; }
+    .demo { display: inline-block; margin-top: 8px; padding: 4px 9px; border-radius: 10px;
+      background: #fff; color: #6739b7; font-size: 11px; font-weight: bold; }
+    .content { padding: 20px 16px 90px; }
+    h2 { font-size: 20px; margin-bottom: 15px; }
+    .actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+    .action { text-align: center; padding: 12px 4px; border-radius: 15px; background: #f5f2ff; cursor: pointer; }
+    .icon { width: 48px; height: 48px; margin: auto; border-radius: 50%; background: #6739b7; color: white;
+      display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .action p { font-size: 12px; margin-top: 8px; }
+    .notice { background: #fff7e6; border: 1px solid #ffd98a; padding: 15px; border-radius: 15px;
+      margin-bottom: 25px; font-size: 13px; line-height: 1.5; }
+    .transaction { background: white; border: 1px solid #eee; padding: 15px; border-radius: 15px;
+      display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .name { font-weight: bold; }
+    .date { font-size: 11px; color: #888; margin-top: 4px; }
+    .amount { color: #168a3b; font-weight: bold; }
+    nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: min(480px, 100%);
+      background: white; border-top: 1px solid #ddd; display: flex; justify-content: space-around; padding: 12px 0; }
+    nav div { text-align: center; font-size: 12px; color: #666; }
+    nav .active { color: #6739b7; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="top">
+        <div class="logo">PayDemo</div>
+        <div class="profile">A</div>
+      </div>
+      <div class="balance-box">
+        <div class="balance-title">Demo Balance</div>
+        <div class="balance">₹20,000.00</div>
+        <span class="demo">DEMO ONLY</span>
+      </div>
+    </header>
+    <main class="content">
+      <h2>Quick Actions</h2>
+      <div class="actions">
+        <div class="action" onclick="demoMessage()"><div class="icon">₹</div><p>Send</p></div>
+        <div class="action" onclick="demoMessage()"><div class="icon">⌕</div><p>Scan</p></div>
+        <div class="action" onclick="demoMessage()"><div class="icon">＋</div><p>Add Money</p></div>
+        <div class="action" onclick="demoMessage()"><div class="icon">↕</div><p>History</p></div>
+      </div>
+      <div class="notice">
+        <b>Demo App</b><br>
+        यह ऐप केवल UI और टेस्टिंग के लिए है। इसमें असली बैंक या UPI payment नहीं होता।
+      </div>
+      <h2>Recent Activity</h2>
+      <div class="transaction">
+        <div><div class="name">Demo Shop</div><div class="date">Today • 11:20 AM</div></div>
+        <div class="amount">+ ₹500</div>
+      </div>
+      <div class="transaction">
+        <div><div class="name">Demo User</div><div class="date">Yesterday • 6:45 PM</div></div>
+        <div class="amount">- ₹250</div>
+      </div>
+    </main>
+    <nav>
+      <div class="active">⌂<br>Home</div>
+      <div>₹<br>Send</div>
+      <div>↕<br>History</div>
+      <div>☻<br>Profile</div>
+    </nav>
+  </div>
+  <script>
+    function demoMessage() {
+      alert("यह Demo Feature है — कोई असली payment नहीं होगी।");
+    }
+  </script>
+</body>
+</html>
